@@ -1,0 +1,61 @@
+LABORATORIO CSS BÁSICO (CSS GRID)
+Alumna: Vianidxi Ximena Cruz Fuentes
+
+PASO 1
+
+2. ¿Qué elementos serían afectados en cada caso?
+
+nav a {...}
+Es un selector descendiente: afecta solo a las etiquetas <a> que estén dentro
+de un <nav>. En este index.html son los 5 enlaces del navbar (los 4 iconos de
+redes sociales y "A la tiendita en avión"). Un <a> fuera del nav no se afecta.
+
+nav , a {...}
+La coma agrupa selectores: afecta a TODOS los <nav> y a TODOS los <a> de la
+página, estén donde estén. Es como escribir la misma regla dos veces, una
+para nav y otra para a.
+
+.l, .o, .v, .e, .r {...}
+También es un grupo de selectores de clase: afecta a cada elemento que tenga
+alguna de esas clases. En el index son los 5 div de la cuadrícula (L, O, V, E
+y R). Por eso comparten color de texto, sombra, alineación, tamaño de letra
+y alto de línea.
+
+3-4. ¿Qué hace la propiedad filter?
+
+Al comentar "nav a img { filter: brightness(0) invert(1); }" los iconos del
+navbar se ven con sus colores originales; al descomentarlo se vuelven blancos.
+La propiedad filter aplica efectos gráficos a un elemento, como si fueran
+filtros de edición de fotos. En este caso brightness(0) vuelve la imagen
+completamente negra y después invert(1) invierte los colores, así que el
+negro queda blanco. Por eso todos los iconos se ven blancos sin importar su
+color original.
+
+Propiedades de filter que usaría en mis fotos:
+- grayscale(): convierte la foto a blanco y negro.
+- sepia(): le da un tono cálido de foto antigua.
+- contrast() y saturate(): para que los colores se vean más vivos.
+- blur(): desenfoca, útil para fondos.
+- drop-shadow(): agrega una sombra que respeta la forma de la imagen (por
+  ejemplo un PNG sin fondo).
+
+PASO 2
+- El nav ahora usa un degradado con los colores amarillo y naranja de la
+  paleta de :root (--taylor-yellow y --taylor-orange).
+- Se creó la paleta propia con el prefijo --vianidxi- (azul, amarillo, rojo,
+  morado, naranja y verde) dentro de :root.
+
+PASO 3 (commit "REVOL")
+Los cinco bloques ocupan todo el ancho (grid-column: 1 / 6) y se acomodan uno
+debajo de otro en una sola columna usando grid-row. Primero se ordenaron para
+leer LOVER (filas 1 a 5) y luego para leer REVOL (R en la fila 1 y L en la 5).
+
+PASO 4 (commit "LOVER")
+Los cinco bloques se colocan en la misma fila (grid-row: 1), cada uno en una
+columna distinta (grid-column 1 a 5). Primero se ordenaron como REVOL y luego
+como LOVER.
+
+PASO 5 (commit "Diagonal")
+Cada letra ocupa la misma columna y fila: R (1,1), E (2,2), V (3,3), O (4,4)
+y L (5,5), así se forma una diagonal que dice REVOL. Los colores de fondo se
+cambiaron a la paleta propia (var(--vianidxi-...)).
